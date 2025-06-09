@@ -1,21 +1,53 @@
 {% macro project_card(id, title, description, tech, link, images) %}
+<style>
+    .custom-carousel-height {
+        height: 300px;
+    }
+
+    @media (min-width: 768px) {
+        .custom-carousel-height {
+            height: 500px;
+        }
+    }
+
+    .carousel-image-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .carousel-image-wrapper img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+</style>
+
 <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
     <div class="card-body p-0">
         <div class="d-flex flex-column flex-md-row align-items-center">
+            <!-- Text Content -->
             <div class="p-5 flex-fill">
                 <h2 class="fw-bolder">{{ title }}</h2>
                 <p>{{ description }}</p>
-                <p><strong>Tehnologii:</strong> {{ tech }}</p>
+                <p><strong>Technologies:</strong> {{ tech }}</p>
                 {% if link %}
-                <a href="{{ link }}" target="_blank">Live Demo</a>
+                <a href="{{ link }}" target="_blank" class="text-primary fw-bold">Live Demo</a>
                 {% endif %}
             </div>
+
+            <!-- Image Carousel -->
             <div class="flex-fill">
                 <div id="{{ id }}" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
+                    <div class="carousel-inner custom-carousel-height overflow-hidden">
                         {% for image in images %}
                         <div class="carousel-item {% if loop.first %}active{% endif %}">
-                            <img src="{{ url_for('static', filename='assets/img/' + image) }}" class="d-block w-100" alt="{{ title }} image {{ loop.index }}">
+                            <div class="carousel-image-wrapper">
+                                <img src="{{ url_for('static', filename='assets/img/' + image) }}"
+                                     alt="{{ title }} image {{ loop.index }}">
+                            </div>
                         </div>
                         {% endfor %}
                     </div>
