@@ -1,0 +1,35 @@
+{% macro project_card(id, title, description, tech, link, images) %}
+<div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+    <div class="card-body p-0">
+        <div class="d-flex flex-column flex-md-row align-items-center">
+            <div class="p-5 flex-fill">
+                <h2 class="fw-bolder">{{ title }}</h2>
+                <p>{{ description }}</p>
+                <p><strong>Tehnologii:</strong> {{ tech }}</p>
+                {% if link %}
+                <a href="{{ link }}" target="_blank">Live Demo</a>
+                {% endif %}
+            </div>
+            <div class="flex-fill">
+                <div id="{{ id }}" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for image in images %}
+                        <div class="carousel-item {% if loop.first %}active{% endif %}">
+                            <img src="{{ url_for('static', filename='assets/img/' + image) }}" class="d-block w-100" alt="{{ title }} image {{ loop.index }}">
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#{{ id }}" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#{{ id }}" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endmacro %}

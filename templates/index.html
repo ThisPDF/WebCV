@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Home - My Website{% endblock %}
+{% block title %}Home - Daniel Popescu{% endblock %}
 
 {% block content %}
 <!-- Header -->
@@ -10,10 +10,12 @@
             <div class="col-xxl-5">
                 <div class="text-center text-xxl-start">
                     <div class="badge bg-gradient-primary-to-secondary text-white mb-4">
-                        <div class="text-uppercase">Design &middot; Development &middot; Marketing</div>
+                        <div class="text-uppercase">Robotics &middot; Web Development &middot; Game Design</div>
                     </div>
-                    <div class="fs-3 fw-light text-muted">I can help your business to</div>
-                    <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">Get online and grow fast</span></h1>
+                    <div class="fs-3 fw-light text-muted">I build software, games, and tools that solve real-world problems.</div>
+                    <h1 class="display-3 fw-bolder mb-5">
+                        <span class="text-gradient d-inline">Hi, I'm Daniel Popescu</span>
+                    </h1>
                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
                         <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="{{ url_for('resume') }}">Resume</a>
                         <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="{{ url_for('projects') }}">Projects</a>
@@ -24,7 +26,6 @@
                 <div class="d-flex justify-content-center mt-5 mt-xxl-0">
                     <div class="profile bg-gradient-primary-to-secondary">
                         <img class="profile-img" src="{{ url_for('static', filename='assets/profile.png') }}" alt="Profile" />
-                        <!-- Optional SVG Dots decorations removed for clarity -->
                     </div>
                 </div>
             </div>
@@ -38,13 +39,18 @@
         <div class="row gx-5 justify-content-center">
             <div class="col-xxl-8">
                 <div class="text-center my-5">
-                    <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">About Me</span></h2>
-                    <p class="lead fw-light mb-4">My name is Start Bootstrap and I help brands grow.</p>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit dolorum itaque qui unde quisquam consequatur autem.</p>
+                    <h2 class="display-5 fw-bolder">
+                        <span class="text-gradient d-inline">About Me</span>
+                    </h2>
+                    <p class="lead fw-light mb-4">I'm a Robotics student and software developer based in Bucharest.</p>
+                    <p class="text-muted">
+                        Currently studying at Universitatea Politehnica București, I specialize in Python, web technologies, and game development.
+                        I've worked on enterprise apps, 3D games with React Three Fiber, and automation tools with AI. I'm passionate about
+                        building interactive, meaningful user experiences and exploring new technologies like embedded systems and computer vision.
+                    </p>
                     <div class="d-flex justify-content-center fs-2 gap-4">
-                        <a class="text-gradient" href="#"><i class="bi bi-twitter"></i></a>
-                        <a class="text-gradient" href="#"><i class="bi bi-linkedin"></i></a>
-                        <a class="text-gradient" href="#"><i class="bi bi-github"></i></a>
+                        <a class="text-gradient" href="https://www.linkedin.com/in/daniel-popescu-460519246/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        <a class="text-gradient" href="https://github.com/ThisPDF" target="_blank"><i class="bi bi-github"></i></a>
                     </div>
                 </div>
             </div>
